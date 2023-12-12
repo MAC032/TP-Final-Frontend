@@ -35,7 +35,8 @@
 </div>
 <div class="mb-3">
 <label for="imagen">Imagen</label>
-<input type="text" name="imagen" id="imagen" v-model="imagen">
+<!-- <input type="text" name="imagen" id="imagen" v-model="imagen"> -->
+<input type="file" name="imagen" id="imagen" @change="cargarImagen" accept="image/*">
 <img width="100" :src="imagen" alt="">
 </div>
 <button type="button" class="btn btn-success" v-on:click="modificar()">Grabar</button>
