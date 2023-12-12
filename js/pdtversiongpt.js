@@ -3,13 +3,10 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            productos:[],
-            //url:'http://localhost:5000/productos',
-            // si el backend esta corriendo local usar localhost 5000(si no lo subieron a pythonanywhere)
-            url:'https://handana.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
+            productos: [],
+            url: 'https://handana.pythonanywhere.com/productos',
             error: false,
             cargando: true,
-            /*atributos para guardar los valores del formulario */
             id: 0,
             nombre: "",
             imagen: "",
@@ -28,27 +25,27 @@ createApp({
                 .catch(err => {
                     console.error(err);
                     this.error = true;
-                })
+                });
         },
         eliminar(producto) {
             const url = this.url + '/' + producto;
-            let options = {
+            var options = {
                 method: 'DELETE',
             };
             fetch(url, options)
-                .then(res => res.text()) // or res.json()
+                .then(res => res.text())
                 .then(res => {
                     location.reload();
                 });
         },
-        grabar(){
+        grabar() {
             let producto = {
                 nombre: this.nombre,
                 precio: this.precio,
                 stock: this.stock,
                 imagen: this.imagen
             };
-            let options = {
+            var options = {
                 body: JSON.stringify(producto),
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -56,7 +53,7 @@ createApp({
             };
             fetch(this.url, options)
                 .then(() => {
-                    alert("Registro grabado")
+                    alert("Registro grabado");
                     window.location.href = "./productos.html";
                 })
                 .catch(err => {
