@@ -1,3 +1,6 @@
+/* En resumen, este código Vue.js se utiliza para interactuar con un backend (en PythonAnywhere) para realizar operaciones CRUD en una lista de productos, y maneja la lógica de presentación y comportamiento de la interfaz de usuario. */
+
+
 const { createApp } = Vue;
 
 createApp({

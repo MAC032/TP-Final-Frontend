@@ -1,3 +1,8 @@
+/*
+En resumen, este código Vue.js se utiliza para cargar y editar un producto específico utilizando un formulario. Se obtiene el ID del producto de la cadena de búsqueda de la URL, se realiza una solicitud para obtener los datos del producto y se permite al usuario modificar y guardar esos datos
+*/
+
+
 console.log(location.search); // lee los argumentos pasados a este formulario
 let id = location.search.substr(4);
 console.log(id);
