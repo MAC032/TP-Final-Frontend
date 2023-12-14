@@ -18,6 +18,7 @@ createApp({
             imagen: "",
             stock: 0,
             precio: 0,
+            busqueda: "", // Nueva variable para la búsqueda
         };
     },
     methods: {
@@ -74,7 +75,22 @@ createApp({
                 // Convierte la imagen a un formato de URL legible por el navegador
                 this.imagen = URL.createObjectURL(file);
             }
-        }
+        },
+        buscarProducto() {
+            if (!this.busqueda) {
+              // Si el campo de búsqueda está vacío, mostrar todos los productos
+              this.fetchData(this.url);
+            } else {
+              // Filtrar productos según el término de búsqueda
+              const productosFiltrados = this.productos.filter(producto => {
+                // Puedes ajustar la lógica de búsqueda según tus necesidades
+                return producto.nombre.toLowerCase().includes(this.busqueda.toLowerCase());
+              });
+        
+              // Actualizar la lista de productos con los resultados de búsqueda
+              this.productos = productosFiltrados;
+            }
+        },
     },
     created() {
         this.fetchData(this.url);
