@@ -1,7 +1,7 @@
 function prevButton() { window.location.href = '../index.html'; }
 function nextButton() { window.location.href = '../index.html'; }
 function homeButton() { window.location.href = './index.html'; }
-function productosButton() { window.location.href = './productos.html'; }
+function productosButton() { window.location.href="productos.html"; }
 function clasicosButton() { window.location.href = './pages/clasicos.html'; }
 function aventuraButton() { window.location.href = './pages/aventura.html'; }
 function subirButton() { window.scrollTo({top: 0}) }
