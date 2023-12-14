@@ -1,0 +1,125 @@
+#algo{
+    min-height: 2vw;
+    position: relative;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: rgba(150, 140, 64, 0.633);
+    -webkit-text-stroke: 1px brown;
+    font-size: 9vw;
+}
+
+h2 {
+    text-align:center;
+    color: rgba(236, 242, 240, 0.582);
+    font-size: 4vw;
+}
+
+.google-search {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 40%;
+}
+
+section{ 
+    display: flex;
+    min-height: 60vh;
+    width: 60%;
+    height: 4.3%;
+    margin-left: 20%;
+}
+
+section img{
+    width: 0px;
+    flex-grow: 0.5;
+    object-fit: cover;
+    opacity: .7;
+    transition: .3s ease-out;
+}
+
+section img:hover{
+    cursor: crosshair;
+    width: 50%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.grid-buttons {
+    display: grid;
+    grid-template-columns: repeat(
+    auto-fit,minmax(150px,1fr));
+    background-color: rgba(0, 0, 0, 0);
+    padding: 2px;
+    grid-gap: 10px;
+}
+.grid-item2 {
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 2px;
+    font-size: 25px;
+}
+
+button {
+    grid-template-columns: auto;
+    background: black;
+    cursor: pointer;
+    border: none;
+    color: azure;
+    font-size: 19px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 4px;
+}
+
+button:hover::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+z-index: -1;
+width: 100%;
+height: 100%;
+background: linear-gradient(65deg, red, blue, rgb(253, 4, 137), blue, red, blue, rgb(198, 1, 106), blue);
+background-size: 900%;
+border-radius: 16px;
+filter: blur(8px);
+animation: glowing 20s linear infinite;
+}
+
+
+@keyframes glowing {
+0% {
+    background-position: 0 0;
+}
+50% {
+    background-position: 400% 0;
+}
+100% {
+    background-position: 0 0;
+}
+}
+
+footer{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
