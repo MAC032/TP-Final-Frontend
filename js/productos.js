@@ -77,6 +77,9 @@ createApp({
             }
         },
         buscarProducto() {
+            console.log("Método buscarProducto llamado");
+            console.log("Valor de busqueda:", this.busqueda);
+
             if (!this.busqueda) {
               // Si el campo de búsqueda está vacío, mostrar todos los productos
               this.fetchData(this.url);
