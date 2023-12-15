@@ -18,7 +18,7 @@ createApp({
             imagen: "",
             stock: 0,
             precio: 0,
-            busqueda: "moto", // Nueva variable para la búsqueda
+            busqueda: "", // Nueva variable para la búsqueda
         };
     },
     methods: {
