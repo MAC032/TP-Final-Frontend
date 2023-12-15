@@ -77,6 +77,8 @@ createApp({
             }
         },
         buscarProducto() {
+            console.log("Método buscarProducto llamado");
+            console.log("Valor de busqueda:", this.busqueda);
             if (!this.busqueda) {
               this.fetchData(this.url);
             } else {
