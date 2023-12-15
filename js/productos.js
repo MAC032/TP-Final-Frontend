@@ -18,7 +18,7 @@ createApp({
             imagen: "",
             stock: 0,
             precio: 0,
-            busqueda: "" // Nueva variable para la búsqueda
+            busqueda: "", // Nueva variable para la búsqueda
         };
     },
     methods: {
@@ -77,6 +77,15 @@ createApp({
             }
         },
         buscarProducto() {
+            if (!this.busqueda) {
+              this.fetchData(this.url);
+            } else {
+              const productosFiltrados = this.productos.filter(producto => producto.nombre.toLowerCase().includes(this.busqueda.toLowerCase()));
+              this.productos = [...productosFiltrados]; // Actualiza la lista principal
+            }
+        },
+          
+        /*buscarProducto() {
             console.log("Método buscarProducto llamado");
             console.log("Valor de busqueda:", this.busqueda);
 
@@ -93,7 +102,7 @@ createApp({
               // Actualizar la lista de productos con los resultados de búsqueda
               this.productos = productosFiltrados;
             }
-        },
+        },*/
     },
     created() {
         this.fetchData(this.url);
